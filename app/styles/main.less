@@ -1,0 +1,169 @@
+@import "variables.less";
+
+body {
+  background: url('../images/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 600px;
+  margin: 50px auto;
+  min-height: 100vh;
+
+  #app {
+    color: @white;
+    font-family: 'Exo', sans-serif;
+    text-shadow: 1px 1px @black;
+    display: table-cell;
+    vertical-align: middle;
+
+    h2, p {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 3em;
+    }
+    p {
+      font-size: 2em;
+      color: @blue;
+    }
+
+    #filter {
+
+      input[type=text] {
+        width: 100%;
+        font-size: 2em;
+        outline: none;
+        color: @white;
+        text-shadow: 1px 1px @black;
+        border: none;
+        border-bottom: 2px solid @white;
+        background-color: transparent;
+        margin-bottom: 10px;
+
+        &::-webkit-input-placeholder {
+          color: @white;
+        }
+
+        &:-moz-placeholder {
+          color: @white;
+        }
+
+        &::-moz-placeholder {
+          color: @white;
+        }
+
+        &:-ms-input-placeholder {
+          color: @white;
+        }
+
+      }
+
+      #checkboxes {
+        margin: 20px 0;
+
+        input {
+          display: none;
+
+          &:checked + label {
+            color: @black;
+            text-shadow: 1px 1px @white;
+            background-color: @blue;
+          }
+        }
+
+        label {
+          cursor: pointer;
+          background: @blackalpha;
+          padding: 5px 10px;
+          border-radius: 5px;
+          margin-right: 10px;
+          transition: .2s;
+        }
+      }
+
+      #options {
+
+        h2 {
+          margin: 0;
+          padding: 5px 10px;
+          text-align: left;
+          color: @blue;
+          font-size: 1.4em;
+          border-bottom: 1px solid @blue;
+        }
+
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+
+        li {
+          border-bottom: 1px solid @black;
+          background-color: @blackalpha;
+
+          a {
+            display: block;
+            color: @white;
+            padding: 5px 10px;
+            text-decoration: none;
+            transition: .2s;
+
+            &:hover {
+              color: @blue;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+    #result {
+
+      dl {
+        width: 500px;
+        margin-left: 150px;
+
+        dt {
+          display: block;
+          float: left;
+          width: 200px;
+          margin: 0 0 10px 0;
+        }
+
+        dd {
+          display: inline-block;
+          width: 250px;
+          min-height: 21px;
+          margin: 0 0 10px 0;
+
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            a {
+              color: @white;
+
+              &:hover {
+                color: @blue;
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

@@ -5,6 +5,7 @@
     <title></title>
 
     <link rel="stylesheet" href="dist/css/main.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
@@ -40,17 +41,17 @@
                 <label for="chkPlanets">Planets</label>
             </section>
             <section id="options">
-                <h2>People</h2>
+                <h2 class="people">People</h2>
                 <ul id="people"></ul>
-                <h2>Films</h2>
+                <h2 class="films">Films</h2>
                 <ul id="films"></ul>
-                <h2>Starships</h2>
+                <h2 class="starships">Starships</h2>
                 <ul id="starships"></ul>
-                <h2>Vehicles</h2>
+                <h2 class="vehicles">Vehicles</h2>
                 <ul id="vehicles"></ul>
-                <h2>Species</h2>
+                <h2 class="species">Species</h2>
                 <ul id="species"></ul>
-                <h2>Planets</h2>
+                <h2 class="planets">Planets</h2>
                 <ul id="planets"></ul>
             </section>
         </form>
@@ -60,237 +61,237 @@
     <script type="text/template" id="person-template">
         <h2><%- name %></h2>
         <dl>
-            <dd>Height:</dd>
-            <dt><%- height %></dt>
+            <dt>Height:</dt>
+            <dd><%- height %></dd>
 
-            <dd>Mass:</dd>
-            <dt><%- mass %></dt>
+            <dt>Mass:</dt>
+            <dd><%- mass %></dd>
 
-            <dd>Hair color:</dd>
-            <dt><%- hair_color %></dt>
+            <dt>Hair color:</dt>
+            <dd><%- hair_color %></dd>
 
-            <dd>Skin color:</dd>
-            <dt><%- skin_color %></dt>
+            <dt>Skin color:</dt>
+            <dd><%- skin_color %></dd>
 
-            <dd>Eye color:</dd>
-            <dt><%- eye_color %></dt>
+            <dt>Eye color:</dt>
+            <dd><%- eye_color %></dd>
 
-            <dd>Birth year:</dd>
-            <dt><%- birth_year %></dt>
+            <dt>Birth year:</dt>
+            <dd><%- birth_year %></dd>
 
-            <dd>Gender:</dd>
-            <dt><%- gender %></dt>
+            <dt>Gender:</dt>
+            <dd><%- gender %></dd>
 
-            <dd>Homeworld:</dd>
-            <dt><ul class="homeworld"></ul></dt>
+            <dt>Homeworld:</dt>
+            <dd><ul class="homeworld"></ul></dd>
 
-            <dd>Films:</dd>
-            <dt><ul class="films"></ul></dt>
+            <dt>Films:</dt>
+            <dd><ul class="films"></ul></dd>
 
-            <dd>Species:</dd>
-            <dt><ul class="species"></ul></dt>
+            <dt>Species:</dt>
+            <dd><ul class="species"></ul></dd>
 
-            <dd>Vehicles:</dd>
-            <dt><ul class="vehicles"></ul></dt>
+            <dt>Vehicles:</dt>
+            <dd><ul class="vehicles"></ul></dd>
 
-            <dd>Starships:</dd>
-            <dt><ul class="starships"></ul></dt>
+            <dt>Starships:</dt>
+            <dd><ul class="starships"></ul></dd>
         </dl>
     </script>
 
     <script type="text/template" id="film-template">
         <h2><%- title %></h2>
         <dl>
-            <dd>Episode:</dd>
-            <dt><%- episode_id %></dt>
+            <dt>Episode:</dt>
+            <dd><%- episode_id %></dd>
 
-            <dd>Opening crawl:</dd>
-            <dt><%- opening_crawl %></dt>
+            <dt>Opening crawl:</dt>
+            <dd><%- opening_crawl %></dd>
 
-            <dd>Director:</dd>
-            <dt><%- director %></dt>
+            <dt>Director:</dt>
+            <dd><%- director %></dd>
 
-            <dd>Producer:</dd>
-            <dt><%- producer %></dt>
+            <dt>Producer:</dt>
+            <dd><%- producer %></dd>
 
-            <dd>Release date:</dd>
-            <dt><%- release_date %></dt>
+            <dt>Release date:</dt>
+            <dd><%- release_date %></dd>
 
-            <dd>Characters:</dd>
-            <dt><ul class="characters"></ul></dt>
+            <dt>Characters:</dt>
+            <dd><ul class="characters"></ul></dd>
 
-            <dd>Planets:</dd>
-            <dt><ul class="planets"></ul></dt>
+            <dt>Planets:</dt>
+            <dd><ul class="planets"></ul></dd>
 
-            <dd>Starships:</dd>
-            <dt><ul class="starships"></ul></dt>
+            <dt>Starships:</dt>
+            <dd><ul class="starships"></ul></dd>
 
-            <dd>Vehicles:</dd>
-            <dt><ul class="vehicles"></ul></dt>
+            <dt>Vehicles:</dt>
+            <dd><ul class="vehicles"></ul></dd>
 
-            <dd>Species:</dd>
-            <dt><ul class="species"></ul></dt>
+            <dt>Species:</dt>
+            <dd><ul class="species"></ul></dd>
         </dl>
     </script>
 
     <script type="text/template" id="starship-template">
         <h2><%- name %></h2>
         <dl>
-            <dd>Model:</dd>
-            <dt><%- model %></dt>
+            <dt>Model:</dt>
+            <dd><%- model %></dd>
 
-            <dd>Manufacturer:</dd>
-            <dt><%- manufacturer %></dt>
+            <dt>Manufacturer:</dt>
+            <dd><%- manufacturer %></dd>
 
-            <dd>Cost in credits:</dd>
-            <dt><%- cost_in_credits %></dt>
+            <dt>Cost in credits:</dt>
+            <dd><%- cost_in_credits %></dd>
 
-            <dd>Length:</dd>
-            <dt><%- length %></dt>
+            <dt>Length:</dt>
+            <dd><%- length %></dd>
 
-            <dd>Max atmosphering speed:</dd>
-            <dt><%- max_atmosphering_speed %></dt>
+            <dt>Max atmosphering speed:</dt>
+            <dd><%- max_atmosphering_speed %></dd>
 
-            <dd>Crew:</dd>
-            <dt><%- crew %></dt>
+            <dt>Crew:</dt>
+            <dd><%- crew %></dd>
 
-            <dd>Passengers:</dd>
-            <dt><%- passengers %></dt>
+            <dt>Passengers:</dt>
+            <dd><%- passengers %></dd>
 
-            <dd>Cargo capacity:</dd>
-            <dt><%- cargo_capacity %></dt>
+            <dt>Cargo capacity:</dt>
+            <dd><%- cargo_capacity %></dd>
 
-            <dd>Consumables:</dd>
-            <dt><%- consumables %></dt>
+            <dt>Consumables:</dt>
+            <dd><%- consumables %></dd>
 
-            <dd>Hyperdrive rating:</dd>
-            <dt><%- hyperdrive_rating %></dt>
+            <dt>Hyperdrive rating:</dt>
+            <dd><%- hyperdrive_rating %></dd>
 
-            <dd>MGLT:</dd>
-            <dt><%- MGLT %></dt>
+            <dt>MGLT:</dt>
+            <dd><%- MGLT %></dd>
 
-            <dd>Starship class:</dd>
-            <dt><%- starship_class %></dt>
+            <dt>Starship class:</dt>
+            <dd><%- starship_class %></dd>
 
-            <dd>Pilots:</dd>
-            <dt><ul class="pilots"></ul></dt>
+            <dt>Pilots:</dt>
+            <dd><ul class="pilots"></ul></dd>
 
-            <dd>Films:</dd>
-            <dt><ul class="films"></ul></dt>
+            <dt>Films:</dt>
+            <dd><ul class="films"></ul></dd>
         </dl>
     </script>
 
     <script type="text/template" id="vehicle-template">
         <h2><%- name %></h2>
         <dl>
-            <dd>Model:</dd>
-            <dt><%- model %></dt>
+            <dt>Model:</dt>
+            <dd><%- model %></dd>
 
-            <dd>Manufacturer:</dd>
-            <dt><%- manufacturer %></dt>
+            <dt>Manufacturer:</dt>
+            <dd><%- manufacturer %></dd>
 
-            <dd>Cost in credits:</dd>
-            <dt><%- cost_in_credits %></dt>
+            <dt>Cost in credits:</dt>
+            <dd><%- cost_in_credits %></dd>
 
-            <dd>Length:</dd>
-            <dt><%- length %></dt>
+            <dt>Length:</dt>
+            <dd><%- length %></dd>
 
-            <dd>Max atmosphering speed:</dd>
-            <dt><%- max_atmosphering_speed %></dt>
+            <dt>Max atmosphering speed:</dt>
+            <dd><%- max_atmosphering_speed %></dd>
 
-            <dd>Crew:</dd>
-            <dt><%- crew %></dt>
+            <dt>Crew:</dt>
+            <dd><%- crew %></dd>
 
-            <dd>Passengers:</dd>
-            <dt><%- passengers %></dt>
+            <dt>Passengers:</dt>
+            <dd><%- passengers %></dd>
 
-            <dd>Cargo capacity:</dd>
-            <dt><%- cargo_capacity %></dt>
+            <dt>Cargo capacity:</dt>
+            <dd><%- cargo_capacity %></dd>
 
-            <dd>Consumables:</dd>
-            <dt><%- consumables %></dt>
+            <dt>Consumables:</dt>
+            <dd><%- consumables %></dd>
 
-            <dd>Vehicle class:</dd>
-            <dt><%- vehicle_class %></dt>
+            <dt>Vehicle class:</dt>
+            <dd><%- vehicle_class %></dd>
 
-            <dd>Pilots:</dd>
-            <dt><ul class="pilots"></ul></dt>
+            <dt>Pilots:</dt>
+            <dd><ul class="pilots"></ul></dd>
 
-            <dd>Films:</dd>
-            <dt><ul class="films"></ul></dt>
+            <dt>Films:</dt>
+            <dd><ul class="films"></ul></dd>
         </dl>
     </script>
 
     <script type="text/template" id="race-template">
         <h2><%- name %></h2>
         <dl>
-            <dd>Classification:</dd>
-            <dt><%- classification %></dt>
+            <dt>Classification:</dt>
+            <dd><%- classification %></dd>
 
-            <dd>Designation:</dd>
-            <dt><%- designation %></dt>
+            <dt>Designation:</dt>
+            <dd><%- designation %></dd>
 
-            <dd>Average height:</dd>
-            <dt><%- average_height %></dt>
+            <dt>Average height:</dt>
+            <dd><%- average_height %></dd>
 
-            <dd>Skin colors:</dd>
-            <dt><%- skin_colors %></dt>
+            <dt>Skin colors:</dt>
+            <dd><%- skin_colors %></dd>
 
-            <dd>Hair colors:</dd>
-            <dt><%- hair_colors %></dt>
+            <dt>Hair colors:</dt>
+            <dd><%- hair_colors %></dd>
 
-            <dd>Eye colors:</dd>
-            <dt><%- eye_colors %></dt>
+            <dt>Eye colors:</dt>
+            <dd><%- eye_colors %></dd>
 
-            <dd>Average lifespan:</dd>
-            <dt><%- average_lifespan %></dt>
+            <dt>Average lifespan:</dt>
+            <dd><%- average_lifespan %></dd>
 
-            <dd>Homeworld:</dd>
-            <dt><ul class="homeworld"></ul></dt>
+            <dt>Homeworld:</dt>
+            <dd><ul class="homeworld"></ul></dd>
 
-            <dd>Language:</dd>
-            <dt><%- language %></dt>
+            <dt>Language:</dt>
+            <dd><%- language %></dd>
 
-            <dd>People:</dd>
-            <dt><ul class="people"></ul></dt>
+            <dt>People:</dt>
+            <dd><ul class="people"></ul></dd>
 
-            <dd>Films:</dd>
-            <dt><ul class="films"></ul></dt>
+            <dt>Films:</dt>
+            <dd><ul class="films"></ul></dd>
         </dl>
     </script>
 
     <script type="text/template" id="planet-template">
         <h2><%- name %></h2>
         <dl>
-            <dd>Rotation period:</dd>
-            <dt><%- rotation_period %></dt>
+            <dt>Rotation period:</dt>
+            <dd><%- rotation_period %></dd>
 
-            <dd>Orbital period:</dd>
-            <dt><%- orbital_period %></dt>
+            <dt>Orbital period:</dt>
+            <dd><%- orbital_period %></dd>
 
-            <dd>Diameter:</dd>
-            <dt><%- diameter %></dt>
+            <dt>Diameter:</dt>
+            <dd><%- diameter %></dd>
 
-            <dd>Climate:</dd>
-            <dt><%- climate %></dt>
+            <dt>Climate:</dt>
+            <dd><%- climate %></dd>
 
-            <dd>Gravity:</dd>
-            <dt><%- gravity %></dt>
+            <dt>Gravity:</dt>
+            <dd><%- gravity %></dd>
 
-            <dd>Terrain:</dd>
-            <dt><%- terrain %></dt>
+            <dt>Terrain:</dt>
+            <dd><%- terrain %></dd>
 
-            <dd>Surface water:</dd>
-            <dt><%- surface_water %></dt>
+            <dt>Surface water:</dt>
+            <dd><%- surface_water %></dd>
 
-            <dd>Population:</dd>
-            <dt><%- population %></dt>
+            <dt>Population:</dt>
+            <dd><%- population %></dd>
 
-            <dd>Residents:</dd>
-            <dt><ul class="residents"></ul></dt>
+            <dt>Residents:</dt>
+            <dd><ul class="residents"></ul></dd>
 
-            <dd>Films:</dd>
-            <dt><ul class="films"></ul></dt>
+            <dt>Films:</dt>
+            <dd><ul class="films"></ul></dd>
         </dl>
     </script>
 

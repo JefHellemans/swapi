@@ -456,16 +456,20 @@
                 if(group == "films") {
                     view.template = _.template("<a href='#'><%- title %></a>");
                 }
-                element.append(view.render().el);
+                var e = view.render().el;
+                element.append(e);
+                $(e).hide().slideDown(200);
             } else if (collection instanceof Backbone.Collection) {
                 collection.forEach(function(item, index) {
-                    if(index < 10) {
+                    if(index < 5) {
                         var view = new ItemView({model: item});
                         view.group = group;
                         if(group == "films") {
                             view.template = _.template("<a href='#'><%- title %></a>");
                         }
-                        element.append(view.render().el);
+                        var e = view.render().el;
+                        element.append(e);
+                        $(e).hide().slideDown(200);
                     }
                 });
             }
@@ -481,44 +485,44 @@
                 case "people":
                     view.template = _.template($("#person-template").html());
                     container.append(view.render().el);
-                    view.makeList($(".homeworld"), this.model.get('homeworld'), "planets");
-                    view.makeList($(".films"), this.model.get('films'), "films");
-                    view.makeList($(".species"), this.model.get('species'), "species");
-                    view.makeList($(".vehicles"), this.model.get('vehicles'), "vehicles");
-                    view.makeList($(".starships"), this.model.get('starships'), "starships");
+                    view.makeList($("#result .homeworld"), this.model.get('homeworld'), "planets");
+                    view.makeList($("#result .films"), this.model.get('films'), "films");
+                    view.makeList($("#result .species"), this.model.get('species'), "species");
+                    view.makeList($("#result .vehicles"), this.model.get('vehicles'), "vehicles");
+                    view.makeList($("#result .starships"), this.model.get('starships'), "starships");
                     break;
                 case "films":
                     view.template = _.template($("#film-template").html());
                     container.append(view.render().el);
-                    view.makeList($(".characters"), this.model.get('characters'), "people");
-                    view.makeList($(".planets"), this.model.get('planets'), "planets");
-                    view.makeList($(".starships"), this.model.get('starships'), "starships");
-                    view.makeList($(".vehicles"), this.model.get('vehicles'), "vehicles");
-                    view.makeList($(".species"), this.model.get('species'), "species");
+                    view.makeList($("#result .characters"), this.model.get('characters'), "people");
+                    view.makeList($("#result .planets"), this.model.get('planets'), "planets");
+                    view.makeList($("#result .starships"), this.model.get('starships'), "starships");
+                    view.makeList($("#result .vehicles"), this.model.get('vehicles'), "vehicles");
+                    view.makeList($("#result .species"), this.model.get('species'), "species");
                     break;
                 case "starships":
                     view.template = _.template($("#starship-template").html());
                     container.append(view.render().el);
-                    view.makeList($(".pilots"), this.model.get('pilots'), "people");
-                    view.makeList($(".films"), this.model.get('films'), "films");
+                    view.makeList($("#result .pilots"), this.model.get('pilots'), "people");
+                    view.makeList($("#result .films"), this.model.get('films'), "films");
                     break;
                 case "vehicles":
                     view.template = _.template($("#vehicle-template").html());
                     container.append(view.render().el);
-                    view.makeList($(".pilots"), this.model.get('pilots'), "people");
-                    view.makeList($(".films"), this.model.get('films'), "films");
+                    view.makeList($("#result .pilots"), this.model.get('pilots'), "people");
+                    view.makeList($("#result .films"), this.model.get('films'), "films");
                     break;
                 case "species":
                     view.template = _.template($("#race-template").html());
                     container.append(view.render().el);
-                    view.makeList($(".people"), this.model.get('people'), "people");
-                    view.makeList($(".films"), this.model.get('films'), "films");
+                    view.makeList($("#result .people"), this.model.get('people'), "people");
+                    view.makeList($("#result .films"), this.model.get('films'), "films");
                     break;
                 case "planets":
                     view.template = _.template($("#planet-template").html());
                     container.append(view.render().el);
-                    view.makeList($(".residents"), this.model.get('residents'), "people");
-                    view.makeList($(".films"), this.model.get('films'), "films");
+                    view.makeList($("#result .residents"), this.model.get('residents'), "people");
+                    view.makeList($("#result .films"), this.model.get('films'), "films");
                     break;
             }
         },
@@ -534,8 +538,14 @@
         template: _.template($('#loading-template').html()),
         status: "",
         events: {
+            'keypress #search': 'preventSend',
             'keyup #search': 'search',
             'click [type="checkbox"]':'search'
+        },
+        preventSend: function(e){
+            if(e.which === 13) {
+                e.preventDefault();
+            }
         },
         search: function(){
             var val = document.getElementById("search").value;
@@ -559,6 +569,7 @@
                 this.$el.html(this.template({status: this.status}));
             } else {
                 this.$el.html(this.template());
+                $("#options h2").slideUp(0);
             }
         }
 
@@ -599,10 +610,16 @@
             }
             if($(this).is(":checked")) {
                 compareOptions(options, collection, group, val, function(err, o) {
+                    if(o.length === 0) {
+                        $("h2." + group).slideUp(200);
+                    } else {
+                        $("h2." + group).slideDown(200);
+                    }
                     var view = new ItemView();
                     view.showList($("#" + group), o, group);
                 });
             } else {
+                $("h2." + group).slideUp(200);
                 var view = new ItemView();
                 view.showList($("#" + group), options, group);
             }

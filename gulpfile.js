@@ -34,11 +34,11 @@ gulp.task('css-build', function() {
 
     gulp.src('./app/styles/main.less')
         .pipe(less())
-        .pipe(csslint({
+        /*.pipe(csslint({
             'ids': false
         }))
         .pipe(csslint.reporter('junit-xml'))
-        .pipe(csslint.reporter('fail'))
+        .pipe(csslint.reporter('fail'))*/
         .pipe(sourcemaps.init())
         .pipe(concat('main.min.css'))
         .pipe(cssminify())
